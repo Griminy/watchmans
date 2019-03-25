@@ -1,24 +1,13 @@
-# README
+# watchmans
+mans who can watch)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Examples:
 
-Things you may want to cover:
+create Hook-Hook-Hoook!
 
-* Ruby version
+curl -XGET -H "Content-type: application/json" -d '{"customer": {"video_id": 1}}' 'localhost:3000/customers'
 
-* System dependencies
+create some customers by video_id(that being watching right now, yap!) 
 
-* Configuration
+curl -XGET -H "Content-type: application/json" -d '{"customer": {"video_id": 1}}' 'localhost:3000/customers'
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
