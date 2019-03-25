@@ -13,6 +13,7 @@ gem 'sqlite3', '~> 1.3.6'
 gem 'pg'
 # Use Passenger as the app server
 gem 'passenger', require: 'phusion_passenger/rack_handler'
+gem 'awesome_print'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -29,6 +30,7 @@ gem 'passenger', require: 'phusion_passenger/rack_handler'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do

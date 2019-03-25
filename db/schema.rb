@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(version: 20190325083101) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "streams", force: :cascade do |t|
+  create_table "hooks", force: :cascade do |t|
     t.integer  "customer_id"
     t.integer  "video_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["customer_id"], name: "index_streams_on_customer_id"
-    t.index ["video_id"], name: "index_streams_on_video_id"
+    t.index ["customer_id"], name: "index_hooks_on_customer_id"
+    t.index ["video_id"], name: "index_hooks_on_video_id"
   end
 
   create_table "videos", force: :cascade do |t|
