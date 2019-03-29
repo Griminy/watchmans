@@ -1,7 +1,7 @@
 class Video < ApplicationRecord
   
   belongs_to :customer
-  has_many :streams
+  has_many   :streams
   validates_presence_of :name, :duration
 
   scope :in_process, -> do (customer = nil)

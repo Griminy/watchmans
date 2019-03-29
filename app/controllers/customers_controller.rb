@@ -1,10 +1,10 @@
 class CustomersController < ApplicationController
 
-  before_action :set_customer, only: %i(show update destroy)
+  before_action :set_customer, only: %i(show update destroy is_watching_now)
 
   def create
     @customer = Customer.new permitted_params
-    api_save customer
+    api_save @customer
   end
 
   def show
@@ -16,7 +16,6 @@ class CustomersController < ApplicationController
     api_save @customer
   end
 
-
   # curl -XGET -H "Content-type: application/json" -d '{"customer": {"video_id": 1}}' 'localhost:3000/customers'
   def index
     @customers = Customer.where permitted_params
@@ -27,6 +26,12 @@ class CustomersController < ApplicationController
     end
 
     api_collection @customers.limit(100)
+  end
+
+  def is_watching_now
+    @video = Video.find params[:customer][:video_id]
+    @hooks = Hook.actual.where customer: @customer, video: @video
+    api_success result: @hooks.any?
   end
 
   def destroy

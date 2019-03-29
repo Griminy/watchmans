@@ -1,3 +1,5 @@
+# INFO знаю, можно было из фабрики, но захотелось так :P
+
 def get_random_record klass
   klass.offset(rand(klass.count)).first
 end

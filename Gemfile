@@ -14,6 +14,7 @@ gem 'pg'
 # Use Passenger as the app server
 gem 'passenger', require: 'phusion_passenger/rack_handler'
 gem 'awesome_print'
+gem 'factory_girl_rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -31,6 +32,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-set'
+  gem 'database_cleaner'
 end
 
 group :development do
